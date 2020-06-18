@@ -1,0 +1,22 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include favicon.html %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>{{site.title}}</title>
+  </head>
+  <body>
+    <div class="bodyWrapper">
+      <div class="contentWrapper">
+        {% include nav.html class="default" %}
+        <div class="default">
+          {{ page.content | markdownify}}
+        </div>
+      </div>
+    {% include footer.html %}
+    </div>
+  </body>
+</html>

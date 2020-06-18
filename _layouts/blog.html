@@ -1,0 +1,52 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include favicon.html %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>{{site.title}}</title>
+  </head>
+  <body>
+    <div class="bodyWrapper">
+      <div class="contentWrapper">
+        {% include nav.html class="default" %}
+        <div class="default">
+          {% assign sorted = paginator.posts | sort: 'date' | reverse %}
+          {% for post in sorted %}
+            <div class="post">
+              <a href="{{ post.url}}">
+                <h2>{{post.title}}</h2>
+              </a>
+              <p>📅 {{ post.date | date: "%a, %b %d, %y"}}</p>
+              <a href="{{ post.url}}">
+                <img src="{{ post.image }}" alt="thumbnail image" class="thumbnail">
+              </a>
+              <p>{{ post.description }}</p>
+              <hr>
+            </div>
+          {% endfor %}
+          <!-- Tag cloud -->
+          <span>Tags: {% include tag_cloud.html %}</span>
+        </div>
+        <!-- Pagination links -->
+        <div class="pagination">
+          {% if paginator.previous_page %}
+            <a href="{{ paginator.previous_page_path }}" class="previous">
+              &larr; Previous
+            </a>
+            {% else %}
+            <span class="previous">&larr; Previous</span>
+          {% endif %}
+          {% if paginator.next_page %}
+            <a href="{{ paginator.next_page_path }}" class="next">Next &rarr;</a>
+            {% else %}
+            <span class="next ">Next &rarr;</span>
+          {% endif %}
+        </div>
+      </div>
+    {% include footer.html %}
+    </div>
+  </body>
+</html>

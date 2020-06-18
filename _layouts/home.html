@@ -1,0 +1,38 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include favicon.html %}
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>{{site.title}}</title>
+  </head>
+  <body onload="setHeight()">
+    <div class="heroImage">
+      {% include nav_home.html %}
+      <div class="textContainer">
+        <div class="text">
+          <h1>{{ site.title }}</h1>
+          <p>Personal Blog by Daniel Johnson.<a href="https://www.linkedin.com/in/danielelectronics/"><img src="/assets/images/linkedin_white.svg"></a><a href="https://github.com/danielelectronics"><img src="/assets/images/github_white.svg"></a></p>
+          <p>{{ site.description}}</p>
+          <div onClick="document.getElementById('target').scrollIntoView({ behavior: 'smooth', block: 'start' });" class="ghostButton">More</div>
+        </div>
+      </div>
+    </div>
+    <div id="featuredProjects">
+      <a id="target">&nbsp;</a>
+      <h1 >Featured Projects</h1>
+      {% assign sorted = site.posts | sort: 'date' | reverse %}
+      {% for post in sorted %}
+        {% if post.featured %}
+        <a href="{{ post.url}}">
+          <h2>{{post.title}}</h2>
+          <img src="{{ post.image }}" alt="thumbnail image" class="thumbnail">
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% include footer.html %}
+  </body>
+</html>

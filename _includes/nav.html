@@ -1,0 +1,40 @@
+<nav id="navbar" class="{{ include.class }}">
+  <nav id="inner" class="{{ include.class }}">
+    <div class="homeLink">
+      <a href="{{ site.url }}">{{ site.title }}</a>
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <div id="nav-icon2">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+    <div class="navLinks">
+      <a href="{{ site.url }}/about.html">About Me</a>
+      <a href="{{ site.url }}/gear.html">Gear</a>
+      <a href="{{ site.url }}/blog/index.html">Blog</a>
+    </div>
+  </nav>
+  <div id="mobileLinks" style = "display: none;">
+    <a href="{{ site.url }}/about.html">About Me</a>
+    <a href="{{ site.url }}/gear.html">Gear</a>
+    <a href="{{ site.url }}/blog/index.html">Blog</a>
+  </div>
+</nav>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("mobileLinks");
+  if (x.style.display == "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  var y = document.getElementById("nav-icon2");
+  y.classList.toggle("open")
+}
+</script>

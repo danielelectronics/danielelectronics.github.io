@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" version="1.1" viewBox="0 0 66.146 60.6" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g transform="translate(862.75 733.48)">
+  <g transform="matrix(.69518 0 0 .69518 -262.98 -223.58)" fill="#0d0d0d">
+   <path d="m-862.75-733.48v87.171h24.941c4.8868 0 9.5541-0.75297 14.002-2.2588v-4.6483c-0.0989 0.0384-0.19667 0.0786-0.29612 0.11626-4.6919 1.8109-9.7132 2.7161-15.064 2.7161h-19.261v-78.899h16.669c6.9256 0 12.908 1.0563 17.952 3.1631v-4.6597c-5.196-1.7991-11.261-2.7017-18.199-2.7017zm46.281 6.056v5.134c2.414 1.596 4.5624 3.4208 6.4415 5.4787 3.4572 3.7042 6.009 7.9021 7.6553 12.594 1.6463 4.6919 2.4696 9.4666 2.4696 14.323 0 6.1736-1.0288 11.689-3.0866 16.545-2.0579 4.7743-4.898 8.8898-8.5199 12.347-1.5478 1.4775-3.2016 2.8033-4.9599 3.9801v5.1191c2.9528-1.7013 5.6763-3.7457 8.17-6.1356 3.9511-3.7865 7.0379-8.314 9.2604-13.582 2.3048-5.3504 3.4576-11.359 3.4576-18.027 0-5.0212-0.8645-10.084-2.5931-15.187-1.6463-5.1035-4.3217-9.8369-8.0258-14.2-2.7917-3.288-6.215-6.0841-10.269-8.3902z" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variation-settings:'wght' 200;white-space:pre"/>
+   <path transform="scale(.26458)" d="m-3107.9-2772.2v329.47h206.73v-15.4h-190.4v-142.8h63.248c0.071-2.1541 0.1133-4.3278 0.1133-6.5312 0-3.1223-0.103-6.2332-0.289-9.336h-63.072v-140h183.87v-15.4zm105.61 155.4c0.2074 3.4258 0.3242 6.8481 0.3242 10.266 0 1.8813-0.034 3.7457-0.082 5.6015h76.144v-15.867z" style="font-variant-caps:normal;font-variant-east-asian:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variation-settings:'wght' 200;white-space:pre"/>
+  </g>
+ </g>
+</svg>

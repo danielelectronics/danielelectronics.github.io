@@ -1,0 +1,37 @@
+$dark_gray: #0D0D0D;
+
+div.post {
+  margin: 5% 0%;
+}
+div.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-left: 10%;
+  margin-right: 10%;
+
+  color: dark_gray;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+
+  // hide next and previous by making then white when they are not links.
+  // this keeps the page number
+  span.next {
+    color: white;
+  }
+  span.previous {
+    color: white;
+  }
+}
+
+// Mobile settings
+@media only screen and (max-device-width: 480px) {
+  div.pagination
+  {
+    font-size: 48px;
+    margin: 2.5%;
+  }
+}

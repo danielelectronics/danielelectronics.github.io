@@ -1,0 +1,165 @@
+/* Variables */
+$dark_gray: #0D0D0D;
+
+html, body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.heroImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("/assets/images/Wood_Hero_Image.jpeg") no-repeat center top fixed;
+  height: 100%;
+  background-size: cover;
+
+  div.bottom {
+    float: bottom;
+  }
+}
+
+div.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.text {
+  width: 60%;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+
+  h1 {
+    font-weight: 400;
+    font-size: 72px;
+  }
+
+  p, a:link, a:visited {
+    color: white;
+    font-size: 36px;
+  }
+
+  .ghostButton {
+    display: inline-block;
+    font-size: 20px;
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid white;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+  }
+
+  .ghostButton:hover {
+    cursor: pointer;
+  }
+
+  img {
+    height: 24px;
+    margin: 0px 0px 0px 10px;
+    filter: brightness(0.7);
+  }
+
+  img:hover {
+    cursor: pointer;
+    filter: brightness(1);
+    transition: filter 0.2s ease-in-out 0s;
+  }
+}
+
+#ctn {
+  display: flex;
+  // position: relative;
+  height: 60px;
+  padding: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#featuredProjects {
+  position: relative;
+  z-index: 0;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  color: $dark_gray;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+
+  padding: 10px;
+
+  h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 72px;
+    margin-top: 20px;
+  }
+
+  a#target {
+    position: absolute;
+    left: 0px;
+    top: -50px;
+  }
+
+  h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+    font-size: 36px;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+}
+
+// Mobile settings
+@media only screen and (max-device-width: 480px) {
+  .heroImage {
+      background-size: auto;
+  }
+  div.text {
+    width: 90%;
+
+    h1 {
+      font-size: 96px;
+    }
+
+    p, a:link, a:visited {
+      font-size: 48px;
+    }
+
+    img {
+      height: 48px;
+      margin: 0px 0px 0px 20px;
+      filter: brightness(0.7);
+    }
+
+    .ghostButton {
+      font-size: 36px;
+    }
+  }
+
+  #featuredProjects {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+    h1 {
+      font-size: 96px;
+    }
+
+    h2 {
+      font-size: 48px;
+    }
+
+    a#target {
+      top: -125px;
+    }
+  }
+}

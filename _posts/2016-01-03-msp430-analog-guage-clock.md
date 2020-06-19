@@ -5,20 +5,20 @@ title: "MSP430 Analog Gauge Clock"
 date: 2016-01-03 11:11:11
 tags: electronics programming microcontroller
 image: "/assets/images/2016-01-03/1.jpg"
-description: "A clock that displays the time using analog ammeters, made with the MSP430 microcontroller. This was a final project for a class, but it was a lot of fun, and has a really cool steam-punk look to it."
+description: "A clock that displays the time using analog ammeters, made with the MSP430 microcontroller. This was a final project for a class, but it was a lot of fun, and has a really cool steampunk look to it."
 ---
 
 Overview
 --------
 
-After seeing an analog meter clock years ago on Hackaday ([link](http://hackaday.com/2012/08/24/volt-meter-clock-also-displays-the-temperature/)), I decided it was time I built my own, using the MSP430G2553 microcontroller that I was using the embedded systems class I was taking. I wanted to use the clock as the final project for the class, so I decided to implement the real time clock using the microcontroller itself, instead of pairing it with a serial real time clock module. The whole project consists of just the microcontroller, a watch crystal, some resistors and trimmer pots, and three analog ammeters. I completed the project with the help of my buddy Doug and ended up getting an A on the project. If you don’t want to read the entire post, you can download at the entire source code [here](/assets/images/2016-01-03/main.c).
+After seeing an analog meter clock years ago on Hackaday ([link](http://hackaday.com/2012/08/24/volt-meter-clock-also-displays-the-temperature/)), I decided it was time I built my own, using the MSP430G2553 microcontroller that I was using the embedded systems class I was taking. I wanted to use the clock as the final project for the class, so I decided to implement the real-time clock using the microcontroller itself, instead of pairing it with a serial real-time clock module. The whole project consists of just the microcontroller, a watch crystal, some resistors and trimmer pots, and three analog ammeters. I completed the project with the help of my buddy Doug and ended up getting an A on the project. If you don’t want to read the entire post, you can download the entire source code [here](/assets/images/2016-01-03/main.c).
 
-Implementing the Real Time Clock
+Implementing the Real-Time Clock
 --------------------------------
 
-Like I said before, this was a project for my embedded systems class, so I wanted to do everything using only the microcontroller we used in class, the MSP430G2553 that comes with the TI Launchpad. I implemented the real time clock (RTC) using a 32.768 kHz watch crystal (the one the comes with the launchpad) and the watchdog timer. I decided to use the watchdog timer so I could use the other two timers on the ‘G2553 for pulse width modulating the ammeters that are used to indicate the time.
+Like I said before, this was a project for my embedded systems class, so I wanted to do everything using only the microcontroller we used in class, the MSP430G2553 that comes with the TI Launchpad. I implemented the real-time clock (RTC) using a 32.768 kHz watch crystal (the one the comes with the launchpad) and the watchdog timer. I decided to use the watchdog timer so I could use the other two timers on the ‘G2553 for pulse width modulating the ammeters that are used to indicate the time.
 
-To get the RTC working, first the clock source must be configured. I used the LFXT1CLK clock source with the crystal and set the loading capacitance to 6pF. I experimented with an oscilloscope to see which loading capacitance worked best because I wasn’t sure what the parasitic capacitance of the strip-board circuit was. TI has a great application not on selecting crystals and loading capacitors. Here’s a [link](http://www.ti.com/lit/an/slaa322d/slaa322d.pdf) (PDF warning) if you want to give it a read. Then, I set the watchdog timer to a 1000ms period and enabled its interrupt as shown in the code below.
+To get the RTC working, first, the clock source must be configured. I used the LFXT1CLK clock source with the crystal and set the loading capacitance to 6pF. I experimented with an oscilloscope to see which loading capacitance worked best because I wasn’t sure what the parasitic capacitance of the strip-board circuit was. TI has a great application not on selecting crystals and loading capacitors. Here’s a [link](http://www.ti.com/lit/an/slaa322d/slaa322d.pdf) (PDF warning) if you want to give it a read. Then, I set the watchdog timer to a 1000ms period and enabled its interrupt as shown in the code below.
 
 {% highlight c linenos %}
 // Configure clock
@@ -127,7 +127,7 @@ Setting the clock was done using an interrupt on the “set” push button which
 Hardware
 --------
 
-Enough with the software, lets look at the hardware. Problem is, there really isn’t much to this project besides the microcontroller. The power supply is the classic LM317 circuit set to about 3 volts, as shown in the schematic below.
+Enough with the software, let's look at the hardware. Problem is, there really isn’t much to this project besides the microcontroller. The power supply is the classic LM317 circuit set to about 3 volts, as shown in the schematic below.
 
 ![Image_Regulator](/assets/images/2016-01-03/5.png)
 
@@ -135,13 +135,13 @@ Choosing the divider resistors controls the feedback which sets the output volta
 
 ![Image_calculation](/assets/images/2016-01-03/6.png)
 
-I measured an output voltage closer to 3.03 V. The output voltage is fairly stable but could change as the clock is running 24/7. For this reason trimmer resistor were added in series with the meters so that the meters can be tuned to match the divisions exactly. The complete schematic is shown below.
+I measured an output voltage closer to 3.03 V. The output voltage is fairly stable but could change as the clock is running 24/7. For this reason, trimmer resistors were added in series with the meters so that the meters can be tuned to match the divisions exactly. The complete schematic is shown below.
 
 ![Image_schematic](/assets/images/2016-01-03/7.png)
 
-The ammeters I used for this project were 1 mA analog panel meters purchased from [Amazon](https://www.amazon.com/uxcell-Mounted-Current-Amperemeter-Measuring/dp/B0087YAZNS/ref=sr_1_5?ie=UTF8&qid=1451871624&sr=8-5&keywords=ammeter+analog+1mA). My buddy Doug is an autoCAD wizard; he scanned in the old meter face plates to get the arc correct, and drew in new divisions for hours, minutes, and seconds. The whole thing only took him a few minutes. Here’s a [link to a PDF](/assets/images/analog-meters.pdf) of the custom face plates.
+The ammeters I used for this project were 1 mA analog panel meters purchased from [Amazon](https://www.amazon.com/uxcell-Mounted-Current-Amperemeter-Measuring/dp/B0087YAZNS/ref=sr_1_5?ie=UTF8&qid=1451871624&sr=8-5&keywords=ammeter+analog+1mA). My buddy Doug is an AutoCAD wizard; he scanned in the old meter faceplates to get the arc correct, and drew in new divisions for hours, minutes, and seconds. The whole thing only took him a few minutes. Here’s a [link to a PDF](/assets/images/analog-meters.pdf) of the custom faceplates.
 
-The body of the clock is 28 gauge steel. I decided not to paint it so it would have a retro industrial style. The surface rust only adds to the cool in my opinion. I used the metal shop at my university to cut, drill and bend the sheet metal into the clock face, and I assembled the circuit on a piece of strip board.
+The body of the clock is 28 gauge steel. I decided not to paint it so it would have a retro-industrial style. The surface rust only adds to the cool in my opinion. I used the metal shop at my university to cut, drill, and bend the sheet metal into the clock face, and I assembled the circuit on a piece of stripboard.
 
 ![Image_back](/assets/images/2016-01-03/8.jpg)
 
@@ -155,7 +155,7 @@ can be found [here](/assets/images/2016-01-03/main.c).
 Update
 ------
 
-[My project got featured on Hackaday!!!](https://hackaday.com/2016/01/05/current-meter-shows-current-time/) So exciting!!! Turns out one of the users spotted a big mistake. In the original video, the second hand only makes it to 55 before resetting. Turns out, it was actually getting to 59 seconds as any useful clock would, but the trimmer pots were out of wack so the meter never got to full deflection. Tuning the trimmer pots was a pain in the butt, so I added a couple lines of code to the time-setting interrupt. If P1.0 is pulled low, the microcontroller maxes out each meter until P1.0 goes high again. Now, to tune the trimmer pots, all I have to do is put a jumper on P1.0, and tune the trimmer pots until each meter’s needle points right to 60 (or 11 for the hours meter). The new code is shown below.
+[My project got featured on Hackaday!!!](https://hackaday.com/2016/01/05/current-meter-shows-current-time/) So exciting!!! Turns out one of the users spotted a big mistake. In the original video, the second hand only makes it to 55 before resetting. Turns out, it was actually getting to 59 seconds as any useful clock would, but the trimmer pots were out of wack so the meter never got to full deflection. Tuning the trimmer pots was a pain in the butt, so I added a couple lines of code to the time-setting interrupt. If P1.0 is pulled low, the microcontroller maxes out each meter until P1.0 goes high again. Now, to tune the trimmer pots, all I have to do is put a jumper on P1.0, and tune the trimmer pots until each meter’s needle points right to 60 (or 11 for the hours' meter). The new code is shown below.
 
 {% highlight c linenos %}
 if((P1IN & BIT0)==0){

@@ -6,6 +6,7 @@ date: 2016-02-09 11:11:11
 tags: electronics
 image: "/assets/images/2016-02-09/1.png"
 description: "Testing an LM7805-pin-compatible buck converter, just for fun."
+permalink: /2016/02/09/testing-a-dc-dc-converter-module/
 ---
 
 Overview

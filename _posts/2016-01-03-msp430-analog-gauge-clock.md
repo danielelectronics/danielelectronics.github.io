@@ -6,6 +6,7 @@ date: 2016-01-03 11:11:11
 tags: electronics programming microcontroller
 image: "/assets/images/2016-01-03/1.jpg"
 description: "A clock that displays the time using analog ammeters, made with the MSP430 microcontroller. This was a final project for a class, but it was a lot of fun, and has a really cool steampunk look to it."
+permalink: /2016/01/03/msp430-analog-gauge-clock/
 ---
 
 Overview

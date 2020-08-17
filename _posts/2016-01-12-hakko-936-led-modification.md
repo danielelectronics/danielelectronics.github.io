@@ -6,6 +6,7 @@ date: 2016-01-12 11:11:11
 tags: electronics repair
 image: "/assets/images/2016-01-12/1.jpg"
 description: "Adding red/green functionality to the LED on my soldering iron, so that I don't have to stare at it for 10 seconds just to see if I remembered to turn it off."
+permalink: /2016/01/12/hakko-936-led-modification/
 ---
 
 Overview

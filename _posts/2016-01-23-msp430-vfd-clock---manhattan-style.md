@@ -6,6 +6,7 @@ date: 2016-01-23 11:11:11
 tags: electronics programming microcontroller
 image: "/assets/images/2016-01-23/1.jpg"
 description: "A clock that displays the time on an IV-18 vacuum florescent display tube, powered by the MSP430, and reusing some of the code from my MSP430 analog gauge clock."
+permalink: /2016/01/23/msp430-vfd-clock-manhattan-style/
 ---
 
 Overview

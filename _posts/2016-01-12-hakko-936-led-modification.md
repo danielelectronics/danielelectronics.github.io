@@ -23,7 +23,7 @@ Probing the circuit with my oscilloscope revealed that when the LED was lit, it 
 
 There was one problem before I could get started though. I only have one soldering iron. Just like a doctor can’t (or shouldn’t) do surgery on himself, I couldn’t solder on my soldering iron using said soldering iron. At the bottom of my toolbox, I had one of those battery-operated soldering irons from Weller. It’s not a bad product, but soldering on batteries sucks. Even worse than that, I didn’t have any double A’s. So I had to hack this iron before I could hack the other iron.
 
-<figure class=sideBySide>
+<figure class="sideBySide">
   <div>
     <img src="/assets/images/2016-01-12/2.jpg" alt="unmodified iron">
     <p>This is the unmodified portable soldering iron.</p>

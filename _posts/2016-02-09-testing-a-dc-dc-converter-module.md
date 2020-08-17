@@ -2,7 +2,7 @@
 featured: false
 layout: post
 title: "Testing a DC-DC Converter Module"
-date: 2016-02-29 11:11:11
+date: 2016-02-09 11:11:11
 tags: electronics
 image: "/assets/images/2016-02-09/1.png"
 description: "Testing an LM7805-pin-compatible buck converter, just for fun."
